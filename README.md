@@ -1,204 +1,110 @@
+# 🚀 MCP SuperAssistant v0.2.0
 
-<div align="center">
-   <!-- <img src="chrome-extension/public/icon-34.png" alt="MCP SuperAssistant Logo" width="100" height="100"> -->
-   <h1>MCP SuperAssistant Chrome Extension</h1>
-</div>
+**Chrome extension that brings MCP (Model Context Protocol) to AI platforms including Scira.AI, ChatGPT, Perplexity, Gemini, and more!**
 
-<p align="center">
-Brings MCP to ChatGPT, Perplexity, Grok, Gemini, Google AI Studio, OpenRouter and more...
-</p>
+[![Version](https://img.shields.io/badge/version-0.2.0-blue.svg)](https://github.com/emperorjke/MCP-SuperAssistant/releases)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+[![Chrome Web Store](https://img.shields.io/badge/chrome-extension-yellow.svg)](https://chrome.google.com/webstore)
 
-<!-- ![MCP SuperAssistant](chrome-extension/public/Cover3.jpg) -->
-<div align="center">
- <img src="chrome-extension/public/Cover3.jpg" alt="MCP SuperAssistant Cover" width="800">
-</div>
+## ✨ NEW: Scira.AI Support!
 
-## Installation
+This version adds comprehensive support for **Scira.AI** - a minimalistic AI-powered search engine. Experience seamless MCP tool integration with Scira's clean interface and powerful search capabilities.
 
-<div align="center">
-   <a href="https://chromewebstore.google.com/detail/mcp-superassistant/kngiafgkdnlkgmefdafaibkibegkcaef?hl=en">
-      <img src="https://img.shields.io/badge/Chrome%20Web%20Store-4285F4?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Chrome Web Store" />
-   </a>
-   <a href="https://addons.mozilla.org/en-US/firefox/addon/mcp-superassistant/">
-      <img src="https://img.shields.io/badge/Firefox%20Add--ons-FF7139?style=for-the-badge&logo=firefox&logoColor=white" alt="Firefox Add-ons" />
-   </a>
-</div>
+## 🎯 Features
 
-<br>
+### 🌟 **Platform Support**
+- **✅ Scira.AI** (NEW!) - Minimalistic AI search engine
+- **✅ ChatGPT** - OpenAI's conversational AI
+- **✅ Perplexity** - AI-powered search and answers
+- **✅ Google Gemini** - Google's advanced AI model
+- **✅ Grok** - xAI's conversational AI
+- **✅ Google AI Studio** - Google's AI development platform
+- **✅ OpenRouter** - Access to multiple AI models
+- **✅ DeepSeek** - Advanced reasoning AI
+- **✅ Kagi** - Privacy-focused search with AI
+- **✅ T3 Chat** - Text-based AI interactions
 
-<div align="center">
-   <h3>🚀 Quick Install</h3>
-   <p>Get MCP SuperAssistant for your browser:</p>
-</div>
+### 🔧 **Core Features**
+- **Smart Tool Detection** - Automatically detects MCP tool calls in AI responses
+- **One-Click Execution** - Execute tools with a single click from the sidebar
+- **Result Integration** - Seamlessly insert tool results back into conversations
+- **Multiple Formats** - Support for JSON, XML, function calls, and markdown
+- **Auto-Execute Mode** - Automatically execute detected tools
+- **Auto-Submit Mode** - Automatically submit results after insertion
+- **Theme Adaptation** - Automatically adapts to platform themes (light/dark)
+- **Sidebar UI** - Clean, resizable sidebar that doesn't interfere with platform UIs
 
-## Overview
+### 🎨 **Scira.AI Specific Features**
+- **Next.js Compatibility** - Seamless integration with Scira's Next.js architecture
+- **Search Context Awareness** - Optimized for search query contexts
+- **Minimalist Design** - UI matches Scira's clean aesthetic
+- **React Component Integration** - Full compatibility with React-based inputs
+- **Navigation Handling** - Robust support for SPA navigation
 
-MCP SuperAssistant is a Chrome extension that integrates the Model Context Protocol (MCP) tools with AI platforms like Perplexity, ChatGPT, Google Gemini, Google AI Studio, Grokand more. It allows users to execute MCP tools directly from these platforms and insert the results back into the conversation, enhancing the capabilities of web-based AI assistants.
+## 🚀 Quick Start
 
-## Currently Supported Platforms
+### 1. Installation
 
-- [ChatGPT](https://chatgpt.com/)
-- [Google Gemini](https://gemini.google.com/)
-- [Perplexity](https://perplexity.ai/)
-- [Grok](https://grok.com/)
-- [Google AI Studio](https://aistudio.google.com/)
-- [OpenRouter Chat](https://openrouter.ai/chat)
-- [DeepSeek](https://chat.deepseek.com/)
-- [Kagi](https://kagi.com/assistant)
-- [T3 Chat](https://t3.chat/)
+#### Option A: Chrome Web Store (Recommended)
+*Coming soon - extension is under review*
 
-
-## Demo Video
-
-[![MCP SuperAssistant Demo](https://img.youtube.com/vi/PY0SKjtmy4E/0.jpg)](https://www.youtube.com/watch?v=PY0SKjtmy4E)
-
-Watch the demo to see MCP SuperAssistant in action!
-
-[MCP SuperAssistant Demo Playlist](https://www.youtube.com/playlist?list=PLOK1DBnkeaJFzxC4M-z7TU7_j04SShX_w)
-
-## What is MCP?
-
-The Model Context Protocol (MCP) is an open standard developed by Anthropic that connects AI assistants to systems where data actually lives, including content repositories, business tools, and development environments. It serves as a universal protocol that enables AI systems to securely and dynamically interact with data sources in real time.
-
-## Key Features
-
-- **Multiple AI Platform Support**: Works with ChatGPT, Perplexity, Google Gemini, Grok, Google AI Studio, OpenRouter Chat, DeepSeek, Kagi, T3 Chat!
-- **Sidebar UI**: Clean, unobtrusive interface that integrates with the AI platform
-- **Tool Detection**: Automatically detects MCP tool calls in AI responses
-- **Tool Execution**: Execute MCP tools with a single click
-- **Tool Result Integration**: Seamlessly insert tool execution results back into the AI conversation
-- **Render Mode**: Renders Function call and Function results. 
-- **Auto-Execute Mode**: Automatically execute detected tools
-- **Auto-Submit Mode**: Automatically submit chat input after result insertion
-- **Push Content Mode**: Option to push page content instead of overlaying
-- **Preferences Persistence**: Remembers sidebar position, size, and settings
-- **Dark/Light Mode Support**: Adapts to the AI platform's theme
-
-## How It Works
-
-```mermaid
-flowchart TD
-    A[AI Chat Interface] -->|Generate| B[Tool Calls]
-    B -->|Detect| C[Extension Detects Tool Calls]
-    C -->|Send via SSE| D[MCP Local Proxy Server]
-    D -->|Forward| E[Actual MCP Server]
-    E -->|Return Results| D
-    D -->|Return Results| C
-    C -->|Insert| F[Add Results Back to Chat]
-```
-
-### Connecting to Local Proxy Server
-
-To connect the Chrome extension to a local server for proxying connections:
-
-#### Run MCP SuperAssistant Proxy via npx:
-
-   ```bash
-   npx @srbhptl39/mcp-superassistant-proxy@latest --config ./mcpconfig.json
-   ```
-   
-   This is useful for:
-   - Proxying remote MCP servers
-   - Adding CORS support to remote servers
-   - Providing health endpoints for monitoring
-
-   Use existing MCP config file if available.
-   ```
-   macOS: ~/Library/Application Support/Claude/claude_desktop_config.json
-   Windows: %APPDATA%\Claude\claude_desktop_config.json
-   ```
-
-   **Example mcpconfig.json:**
-   ```json
-   {
-     "mcpServers": {
-       "desktop-commander": {
-         "command": "npx",
-         "args": [
-           "-y",
-           "@wonderwhy-er/desktop-commander"
-         ]
-       }
-     }
-   }
-   ```
-
-#### Connection Steps:
-
-1. Start the proxy server using one of the commands above
-2. Open the MCP SuperAssistant sidebar in your AI platform
-3. Click on the server status indicator (usually showing as "Disconnected")
-4. Enter the local server URL (default: `http://localhost:3006/sse`)
-5. Click "Connect" to establish the connection
-6. The status indicator should change to "Connected" if successful
-
-## Usage
-
-1. Navigate to a supported AI platform.
-2. The MCP SuperAssistant sidebar will appear on the right side of the page
-3. Configure your MCP server by clicking on the server status indicator
-4. Interact with the AI and use MCP tools by:
-   - Waiting for the AI to suggest a tool (auto-detected)
-   - Executing the tool via the sidebar
-   - Viewing the result and inserting it back into the conversation
-
-
-## Tips & Tricks
-
-1. **Turn off search mode** (chatgpt, perplexity) in AI chat interfaces for better tool call prompt experience and to prevent MCP SuperAssistant from getting derail.
-2. **Turn on Reasoning mode** (chatgpt, perplexity, grok) in AI chat interfaces, which will help the AI to understand the context better and generate the correct tool calls.
-3. Use newer high-end models as they are better at understanding the context and generating the correct tool calls.
-4. Copy the MCP instructions prompt and paste it in the AI chat system prompt (Google AI Studio).
-5. Mention the specific tools you want to use in your conversation.
-6. Use the MCP Auto toggles to control the tool execution.
-
-## Common Issues with MCP SuperAssistant
-
-This page covers the most common issues users encounter with MCP SuperAssistant and provides solutions to resolve them.
-
-### 1. Extension Not Detecting Tool Calls
-
-- Make sure the extension is enabled in your browser.
-- Make sure the **mcp prompt instructions are properly attached or inserted** in the chat, before starting any chat.
-- Check that your AI platform supports tool calls and that the feature is enabled.
-- Refresh the page or restart your browser if the issue persists.
-
-### 2. Tool Execution Fails
-
-- Ensure your proxy server is running and the URL is correct in the sidebar server settings.
-- check your mcpconfig.json file for any errors or formatting issues.
-- Check your network connectivity and firewall settings.
-
-### 3. Connection Issues
-
-- Ensure that your MCP server is running and accessible.
-- Check the server URL in the extension settings.
-- First start the npx mcp-SuperAssistant-proxy server and then reload/restart the extension from chrome://extensions/ page.
-- Check the proxy server logs for any errors or issues.
-- Ensure that your firewall or antivirus software is not blocking the connection.
-- Make sure the server shows the proper connected status and exposes the `/sse` endpoint.
-
-
-### Manual Installation (Development)
-
-#### Release Version
-1. Download the latest release from [Releases](https://github.com/srbhptl39/MCP-SuperAssistant/releases)
+#### Option B: Developer Mode
+1. Download the latest release from [Releases](https://github.com/emperorjke/MCP-SuperAssistant/releases)
 2. Unzip the downloaded file
-3. Navigate to `chrome://extensions/` in Chrome
-4. Enable "Developer mode"
+3. Open `chrome://extensions/` in Chrome
+4. Enable "Developer mode" (top right)
 5. Click "Load unpacked" and select the unzipped directory
-6. Follow [Connecting to Local Proxy Server](#connecting-to-local-proxy-server) to connect to your MCP server
 
-## Development
-
-### Prerequisites
-
-- Node.js (v16+)
-- pnpm
-
-### Setup
+### 2. Setup MCP Server
 
 ```bash
+# Install and start the MCP proxy server
+npx @srbhptl39/mcp-superassistant-proxy@latest --config ./mcpconfig.json
+```
+
+Example `mcpconfig.json`:
+```json
+{
+  "mcpServers": {
+    "desktop-commander": {
+      "command": "npx",
+      "args": ["-y", "@wonderwhy-er/desktop-commander"]
+    },
+    "filesystem": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "/path/to/allowed/files"]
+    }
+  }
+}
+```
+
+### 3. Connect Extension
+
+1. Open any supported AI platform (e.g., https://scira.ai)
+2. The MCP SuperAssistant sidebar will appear on the right
+3. Click the connection status indicator
+4. Enter your MCP server URL (default: `http://localhost:3006/sse`)
+5. Click "Connect"
+
+### 4. Start Using Tools!
+
+1. Ask the AI to use a tool: *"Can you search for information about climate change?"*
+2. The AI will respond with a tool call
+3. Click "Execute" in the sidebar when the tool is detected
+4. Results will be automatically inserted back into the conversation
+
+## 🛠️ Development
+
+### Prerequisites
+- Node.js 16+
+- pnpm (recommended) or npm
+
+### Setup
+```bash
+# Clone the repository
+git clone https://github.com/emperorjke/MCP-SuperAssistant.git
+cd MCP-SuperAssistant
+
 # Install dependencies
 pnpm install
 
@@ -208,31 +114,183 @@ pnpm dev
 # Build for production
 pnpm build
 
-# Create zip package for distribution
+# Create distribution package
 pnpm zip
 ```
 
-## Contributing
+### Project Structure
+```
+src/
+├── platforms/
+│   ├── SciraPlatform.ts      # Scira.AI integration
+│   ├── BasePlatform.ts       # Base platform class
+│   └── ...                   # Other platform implementations
+├── components/
+│   ├── SidebarManager.tsx    # React sidebar UI
+│   └── ToolResult.tsx        # Tool result display
+├── utils/
+│   └── ToolCallParser.ts     # Enhanced tool call detection
+├── client/
+│   └── MCPClient.ts          # MCP server communication
+├── managers/
+│   └── PlatformManager.ts    # Platform detection and management
+├── background.ts             # Chrome extension background script
+├── content-script-init.ts    # Content script initialization
+└── popup/                    # Extension popup UI
+```
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+### Testing
+```bash
+# Run all tests
+pnpm test
 
+# Run tests with coverage
+pnpm test:coverage
+
+# Run tests in watch mode
+pnpm test:watch
+```
+
+## 🎯 How It Works
+
+```mermaid
+sequenceDiagram
+    participant User
+    participant AI Platform
+    participant Extension
+    participant MCP Server
+    participant Tools
+
+    User->>AI Platform: Ask question requiring tools
+    AI Platform->>Extension: Generates response with tool calls
+    Extension->>Extension: Detects tool calls in response
+    Extension->>User: Shows detected tools in sidebar
+    User->>Extension: Clicks "Execute Tool"
+    Extension->>MCP Server: Sends tool execution request
+    MCP Server->>Tools: Executes actual tool
+    Tools->>MCP Server: Returns results
+    MCP Server->>Extension: Returns tool results
+    Extension->>AI Platform: Inserts results into conversation
+    AI Platform->>User: Shows conversation with tool results
+```
+
+## 🔧 Configuration
+
+### Sidebar Settings
+- **Auto Execute** - Automatically execute detected tools
+- **Auto Submit** - Automatically submit results after insertion
+- **Show Preview** - Show preview dialog before inserting results
+
+### Advanced Settings
+Access advanced settings through the extension popup:
+- **MCP Server URL** - Configure your MCP server endpoint
+- **Sidebar Position** - Left or right sidebar placement
+- **Theme** - Auto-detect or manual theme selection
+
+## 🧪 Testing on Scira.AI
+
+1. Visit https://scira.ai
+2. Ask a question that would benefit from tools:
+   - *"Search for the latest news about AI developments"*
+   - *"Find information about renewable energy statistics"*
+   - *"Get weather data for New York"*
+3. Look for tool calls in the AI response
+4. Use the sidebar to execute tools and insert results
+
+### Example Tool Formats Supported
+
+**JSON Format:**
+```json
+{"tool": {"name": "search_web", "arguments": {"query": "AI news", "limit": 5}}}
+```
+
+**XML Format:**
+```xml
+<mcp:search_web query="AI news" limit="5" />
+```
+
+**Function Call Format:**
+```javascript
+search_web(query="AI news", limit=5)
+```
+
+## 🐛 Troubleshooting
+
+### Common Issues
+
+**Sidebar not appearing:**
+- Ensure the extension is enabled in Chrome
+- Refresh the page
+- Check that you're on a supported platform
+
+**Tool calls not detected:**
+- Verify the AI is generating properly formatted tool calls
+- Check the browser console for detection logs
+- Try different tool call formats (JSON, XML, function)
+
+**MCP server connection failed:**
+- Ensure the proxy server is running: `npx @srbhptl39/mcp-superassistant-proxy@latest`
+- Check the server URL in extension settings
+- Verify no firewall is blocking localhost connections
+
+**Tools not executing:**
+- Check MCP server logs for errors
+- Verify your `mcpconfig.json` is valid
+- Ensure required MCP servers are installed and configured
+
+### Getting Help
+
+1. Check the [GitHub Issues](https://github.com/emperorjke/MCP-SuperAssistant/issues)
+2. Review the [MCP Documentation](https://modelcontextprotocol.io/)
+3. Join our community discussions
+
+## 🤝 Contributing
+
+We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) for details.
+
+### Development Workflow
 1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+2. Create a feature branch: `git checkout -b feature/amazing-feature`
+3. Make your changes and add tests
+4. Ensure all tests pass: `pnpm test`
+5. Commit your changes: `git commit -m 'Add amazing feature'`
+6. Push to the branch: `git push origin feature/amazing-feature`
+7. Open a Pull Request
 
-## License
+## 📝 Changelog
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+### v0.2.0 - Scira.AI Support
+- ✅ **NEW**: Complete Scira.AI platform integration
+- ✅ **Enhanced**: Multi-format tool call detection (JSON, XML, functions, markdown)
+- ✅ **Improved**: React-based sidebar UI with theme adaptation
+- ✅ **Added**: Multiple result insertion modes (append, replace, new message)
+- ✅ **Enhanced**: Next.js SPA navigation support
+- ✅ **Improved**: Comprehensive error handling and user experience
+- ✅ **Added**: Extensive test coverage for new features
 
-## Acknowledgments
+### v0.1.x - Previous Versions
+- Platform support for ChatGPT, Perplexity, Gemini, etc.
+- Basic tool detection and execution
+- Sidebar UI implementation
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🙏 Acknowledgments
 
 - Inspired by the [Model Context Protocol (MCP)](https://modelcontextprotocol.io/) by Anthropic
 - Thanks to [Cline](https://github.com/cline/cline) for idea inspiration
 - Built with [Chrome Extension Boilerplate with React + Vite](https://github.com/Jonghakseo/chrome-extension-boilerplate-react-vite)
+- Special thanks to the Scira.AI team for creating an excellent minimalist search platform
 
+## 🔗 Links
 
-## Star History
+- **GitHub Repository**: https://github.com/emperorjke/MCP-SuperAssistant
+- **Chrome Web Store**: *Coming soon*
+- **MCP Documentation**: https://modelcontextprotocol.io/
+- **Scira.AI**: https://scira.ai
 
-[![Star History Chart](https://api.star-history.com/svg?repos=srbhptl39/MCP-SuperAssistant&type=Date)](https://www.star-history.com/#srbhptl39/MCP-SuperAssistant&Date)
+---
+
+**⭐ If you find this extension helpful, please give it a star on GitHub!**
