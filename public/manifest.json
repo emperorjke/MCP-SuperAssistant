@@ -1,0 +1,85 @@
+{
+  "manifest_version": 3,
+  "name": "MCP SuperAssistant",
+  "version": "0.2.0",
+  "description": "Brings MCP to ChatGPT, DeepSeek, Perplexity, Grok, Gemini, Google AI Studio, OpenRouter, Scira.AI, Kagi, T3 Chat and more...",
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting"
+  ],
+  "host_permissions": [
+    "https://chatgpt.com/*",
+    "https://www.perplexity.ai/*",
+    "https://gemini.google.com/*",
+    "https://grok.x.ai/*",
+    "https://aistudio.google.com/*",
+    "https://openrouter.ai/*",
+    "https://chat.deepseek.com/*",
+    "https://kagi.com/*",
+    "https://t3.chat/*",
+    "https://scira.ai/*",
+    "http://localhost:*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://chatgpt.com/*",
+        "https://www.perplexity.ai/*",
+        "https://gemini.google.com/*",
+        "https://grok.x.ai/*",
+        "https://aistudio.google.com/*",
+        "https://openrouter.ai/*",
+        "https://chat.deepseek.com/*",
+        "https://kagi.com/*",
+        "https://t3.chat/*",
+        "https://scira.ai/*"
+      ],
+      "js": ["content/index.iife.js"],
+      "css": ["content/style.css"],
+      "run_at": "document_end"
+    }
+  ],
+  "background": {
+    "service_worker": "background/index.iife.js"
+  },
+  "action": {
+    "default_popup": "popup/index.html",
+    "default_title": "MCP SuperAssistant",
+    "default_icon": {
+      "16": "assets/images/icon-16.png",
+      "32": "assets/images/icon-32.png",
+      "48": "assets/images/icon-48.png",
+      "128": "assets/images/icon-128.png"
+    }
+  },
+  "icons": {
+    "16": "assets/images/icon-16.png",
+    "32": "assets/images/icon-32.png",
+    "48": "assets/images/icon-48.png",
+    "128": "assets/images/icon-128.png"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "assets/images/*",
+        "content/*"
+      ],
+      "matches": [
+        "https://chatgpt.com/*",
+        "https://www.perplexity.ai/*",
+        "https://gemini.google.com/*",
+        "https://grok.x.ai/*",
+        "https://aistudio.google.com/*",
+        "https://openrouter.ai/*",
+        "https://chat.deepseek.com/*",
+        "https://kagi.com/*",
+        "https://t3.chat/*",
+        "https://scira.ai/*"
+      ]
+    }
+  ],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self';"
+  }
+}
