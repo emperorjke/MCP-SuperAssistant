@@ -25,6 +25,7 @@
   "devDependencies": {
     "@extension/tsconfig": "workspace:*",
     "@extension/env": "workspace:*",
-    "fflate": "^0.8.2"
+    "fflate": "^0.8.2",
+    "fast-glob": "^3.3.3"
   }
 }

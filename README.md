@@ -112,7 +112,9 @@ pnpm install
 pnpm dev
 
 # Build for production
-pnpm build
+pnpm -r run ready
+pnpm --filter chrome-extension build
+pnpm --filter @extension/content-script build
 
 # Create distribution package
 pnpm zip
