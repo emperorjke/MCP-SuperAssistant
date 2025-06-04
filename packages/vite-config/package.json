@@ -15,7 +15,8 @@
     "ready": "tsc -b"
   },
   "dependencies": {
-    "@extension/env": "workspace:*"
+    "@extension/env": "workspace:*",
+    "deepmerge": "^4.3.1"
   },
   "devDependencies": {
     "@extension/hmr": "workspace:*",

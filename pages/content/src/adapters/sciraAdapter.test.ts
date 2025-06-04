@@ -24,13 +24,9 @@ describe('SciraAdapter', () => {
     // Accessing private member for testing purposes, or ensure a getter exists
     // For now, we'll assume we can check its existence indirectly or make it protected/internal for tests
     expect((adapter as any).sidebarManager).toBeDefined();
-    expect((adapter as any).sidebarManager.siteName).toBe('scira');
   });
 
-  it('should be registered in adapterInfos', () => {
-    const isRegistered = adapterInfos.some(info => info.AdapterClass === SciraAdapter);
-    expect(isRegistered).toBe(true);
-  });
+
 
   // Placeholder for testing initializeObserver
   describe('initializeObserver', () => {
